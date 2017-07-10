@@ -1,5 +1,5 @@
 #!/bin/bash
-#¶ÔÓ¦µÄcrontab£º59 23 * * * /bin/sh     /usr/local/log_backup/log.sh
+#crontab£º59 23 * * * /bin/sh     /usr/local/log_backup/log.sh
 
 src_logfile=/usr/local/tomcat-front/logs/catalina.out
 dst_name_prefix=front
