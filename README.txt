@@ -43,6 +43,12 @@ ls a.txt b.txt 1>file.out 2>&1
 5.sqlplus中使用删除键乱码问题
 修改.bash_profile，添加：
 stty erase ^H
+上下左右键不好用：
+yum install rlwrap
+yum install readline-devel
+vim /home/oracle/.bash_profile  
+alias sqlplus='rlwrap sqlplus'  
+alias rman='rlwrap rman'  
 
 6.查看系统的版本信息
 lsb_release -a
