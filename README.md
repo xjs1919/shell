@@ -59,5 +59,5 @@ yum install redhat-lsb -y #可以进行安装
 > 跳转到文件尾 G  
 > 删除一行 dd  
 > 删除整个文件内容 dG  
-> 查找 :/字符串 按下n可以跳转到下一处  
-> 替换 1,$s/src/dst/g 从第一行到末尾，所有的src替换成dst  
+> 查找 :/src 按下n可以跳转到下一处  
+> 替换 :1,$s/src/dst/g 从第一行到末尾，所有的src替换成dst  
