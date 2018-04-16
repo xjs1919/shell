@@ -63,3 +63,14 @@ yum install redhat-lsb -y #可以进行安装
 > 替换 :1,$s/src/dst/g 从第一行到末尾，所有的src替换成dst  
 > 撤销 u
 > 反撤销 crtl+r
+
+## 8.创件没有登录权限的用户
+```bash
+groupadd groupname  #创建组
+useradd -g groupname username -s /sbin/nologin    #-s为默认shell，默认给予shell，但是不给登录shell
+```
+或者：
+```bash
+vi /etc/passwd
+username:x:502:502::/home/username:/sbin/nologin
+```
