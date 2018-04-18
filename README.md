@@ -78,6 +78,6 @@ username:x:502:502::/home/username:/sbin/nologin
 
 ### 9.查看cpu利用率 ###
 	1、top 按下数字1 显示每个cpu的利用率
-	2、mpstat -P ALL 3、sar -P ALL
+	2、mpstat -P ALL 
 	3、sar -P ALL
 ----------
