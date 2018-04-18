@@ -74,7 +74,10 @@ useradd -g groupname username -s /sbin/nologin    #-s为默认shell，默认给�
 vi /etc/passwd
 username:x:502:502::/home/username:/sbin/nologin
 ```
-### 9.查看cpu利用率
-> top 按下数字1 显示每个cpu的利用率
-> mpstat -P ALL
-> sar -P ALL 
+----------
+
+### 9.查看cpu利用率 ###
+	1、top 按下数字1 显示每个cpu的利用率
+	2、mpstat -P ALL 3、sar -P ALL
+	3、sar -P ALL
+----------
