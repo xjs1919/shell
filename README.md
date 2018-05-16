@@ -84,3 +84,22 @@ username:x:502:502::/home/username:/sbin/nologin
 	2、mpstat -P ALL 
 	3、sar -P ALL
 ----------
+
+### 10.重命名rm ###
+	1、vi ~/.bashrc
+```bash
+alias rm=trash
+alias r=trash
+alias rl='ls /data/rubbish'
+alias ur=undelfile
+undelfile()
+{
+  mv -i /data/rubbish/\$@ ./
+}
+trash()
+{
+  mv $@ /data/rubbish
+}
+```
+	2、source  ~/.bashrc
+----------
