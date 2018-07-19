@@ -103,3 +103,8 @@ trash()
 ```
 	2、source  ~/.bashrc
 ----------
+
+### 设置jvm内存参数 ###
+```bash
+JAVA_OPTS="-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Xms2048M -Xmx2048M -XX:MetaspaceSize=64M -XX:+UseStringDeduplication -XX:StringDeduplicationAgeThreshold=3 -XX:+DisableExplicitGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$CATALINA_HOME/logs/ -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:$CATALINA_HOME/logs/gc.log"
+```
