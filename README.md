@@ -104,7 +104,41 @@ trash()
 	2、source  ~/.bashrc
 ----------
 
-### 设置jvm内存参数 ###
+### 11.设置jvm内存参数 ###
 ```bash
 JAVA_OPTS="-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Xms2048M -Xmx2048M -XX:MetaspaceSize=64M -XX:+UseStringDeduplication -XX:StringDeduplicationAgeThreshold=3 -XX:+DisableExplicitGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$CATALINA_HOME/logs/ -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:$CATALINA_HOME/logs/gc.log -XX:GCLogFileSize=30m -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5"
+```
+
+### 12.ssh修改默认端口 ###
+```sh
+vi /etc/ssh/sshd_config
+Port 22
+Port 2222 # 添加2222端口
+service sshd restart #重启ssh服务
+修改防火墙，放行新的端口
+```
+### 13.iptables防火墙设置 ###
+```sh
+放行22和80端口
+iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+#允许本机
+iptables -I INPUT -i lo -j ACCEPT
+#允许向外
+iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+#允许ping
+iptables -I INPUT -p icmp -j ACCEPT
+#禁止其他的端口
+iptables -A INPUT -j REJECT
+service iptables save
+service iptables restart
+```
+### 14.centos7禁用firewalld，换用iptables.service #
+```sh
+#禁用firewalld防火墙：
+systemctl disable firewalld
+#安装iptables：
+yum -y install iptables-services
+systemctl enable iptables
+systemctl start iptables
 ```
