@@ -142,3 +142,14 @@ yum -y install iptables-services
 systemctl enable iptables
 systemctl start iptables
 ```
+
+### 15.配置启用ip转发 ###
+```sh
+vim /etc/sysctl.conf
+#配置转发
+net.ipv4.ip_forward=1
+#重启服务，让配置生效
+systemctl restart network
+#查看是否成功,如果返回为“net.ipv4.ip_forward = 1”则表示成功
+sysctl net.ipv4.ip_forward
+```
