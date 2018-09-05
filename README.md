@@ -160,3 +160,11 @@ SELINUX=disabled
 # 查看
 getenforce 
 ```
+
+### 17.修改主机名 ###
+```sh
+vi /etc/hostname
+my_new_hostname
+vi /etc/sysconfig/network
+HOSTNAME=my_new_hostname
+```
