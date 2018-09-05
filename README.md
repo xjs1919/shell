@@ -153,3 +153,10 @@ systemctl restart network
 #查看是否成功,如果返回为“net.ipv4.ip_forward = 1”则表示成功
 sysctl net.ipv4.ip_forward
 ```
+### 16.禁用SELinux###
+```sh
+vim /etc/selinux/config
+SELINUX=disabled
+# 查看
+getenforce 
+```
