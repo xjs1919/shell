@@ -167,4 +167,6 @@ vi /etc/hostname
 my_new_hostname
 vi /etc/sysconfig/network
 HOSTNAME=my_new_hostname
+vi /etc/hosts
+127.0.0.1 my_new_hostname
 ```
