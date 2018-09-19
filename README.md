@@ -180,6 +180,7 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 - [CentOS7](http://mirrors.163.com/.help/CentOS7-Base-163.repo)
 - [CentOS6](http://mirrors.163.com/.help/CentOS6-Base-163.repo)
 - [CentOS5](http://mirrors.163.com/.help/CentOS5-Base-163.repo)
+
 运行以下命令生成缓存
 ```sh
 yum clean all
