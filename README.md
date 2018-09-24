@@ -130,8 +130,11 @@ iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -I INPUT -p icmp -j ACCEPT
 #禁止其他的端口
 iptables -A INPUT -j REJECT
-service iptables save
+/etc/rc.d/init.d/iptables save
 service iptables restart
+# centos7
+firewall-cmd --add-port 2377/tcp --permanent
+systemctl restart firewalld
 ```
 ### 14.centos7禁用firewalld，换用iptables.service #
 ```sh
