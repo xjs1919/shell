@@ -2,7 +2,7 @@
 # chkconfig: 345 99 10
 # description: Auto-starts tomcat
 # /etc/init.d/tomcat8
-# chkconfig --add tmcat8
+# chkconfig --add tomcat8
 RETVAL=0
 export JAVA_HOME=/usr/local/jdk9
 export CATALINA_HOME=/usr/local/tomcat8
@@ -72,3 +72,15 @@ case "$1" in
         ;;
 esac
 exit $RETVAL
+
+修改文件权限
+chmod 755 /etc/init.d/tomcat8
+设置开机启动
+chkconfig tomcat8 on
+查看开机启动的服务
+chkconfig --list
+其他
+启动服务：service tomcat8 start
+停止服务：service tomcat8 stop
+重启服务：service tomcat8 reload
+
