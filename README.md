@@ -192,9 +192,9 @@ yum makecache
 ----------
 ### 19.登录用户相关 ###
 
-last：查看登录成功的用户/var/log/wtmp
-lastb：登陆失败的用户/var/log/btmp
-lastlog：用户的登陆历史/var/log/lastlog
-who：当前登录的用户/var/run/utmp
+- last：查看登录成功的用户/var/log/wtmp
+- lastb：登陆失败的用户/var/log/btmp
+- lastlog：用户的登陆历史/var/log/lastlog
+- who：当前登录的用户/var/run/utmp
 
 ----------
