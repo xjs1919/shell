@@ -198,3 +198,11 @@ yum makecache
 - who：当前登录的用户/var/run/utmp
 
 ----------
+
+### 20.查看文件夹大小 ###
+
+du -h --max-depth=0
+
+----------
+
+
