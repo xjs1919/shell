@@ -1,0 +1,27 @@
+3台主机：11，12，13，其中11作为服务端，其他两台挂载该服务器目录。
+
+1. 在11、12、13上执行
+# 安装nfs服务
+yum -y install nfs-utils
+
+2.在11上执行
+vim /etc/exports
+# 内容如下：
+/data/share 10.17.40.0/24(rw,fsid=0,sync,insecure,no_subtree_check,no_root_squash)
+这句话的意思就是把/data/share这个目录共享给10.17.40.0/24网段
+
+3.在11行执行
+#启动服务
+systemctl start nfs
+#不重启加载NFS配置文件，这个可以检查配置文件的语法错误
+exportfs -avr
+#重启NFS
+systemctl restart nfs
+
+4.在12和13上分别执行挂载即可
+在12上：
+mount 10.17.40.11:/data/share /data/share
+在13上：
+mount 10.17.40.11:/data/share /data/share
+
+
